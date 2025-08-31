@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-black text-white;
+    font-family: 'Inter', sans-serif;
+  }
+
+  ::selection {
+    @apply bg-red-600 text-white;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .text-shadow-glow {
+    text-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
+  }
+}
