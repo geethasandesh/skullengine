@@ -116,7 +116,7 @@ export default function Graphic() {
               <div className="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
               <div className="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
               <div className="w-3 h-3 bg-green-500 rounded-full mr-6"></div>
-              <h1 className="text-6xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent font-['Slackey']">
+              <h1 className="text-4xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent font-['Slackey']">
                 GRAPHIC DESIGN
               </h1>
               <div className="w-3 h-3 bg-blue-500 rounded-full ml-6"></div>
@@ -144,7 +144,7 @@ export default function Graphic() {
                   {/* Service Header */}
                   <div className="flex items-center mb-4">
                     <div className={`w-4 h-4 bg-gradient-to-r ${service.color} rounded-full mr-3 group-hover:animate-spin`}></div>
-                    <h3 className="text-2xl font-bold text-gray-900 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:${service.color} group-hover:bg-clip-text transition-all duration-300">
+                    <h3 className="text-2xl font-bold text-gray-900">
                       {service.title}
                     </h3>
                   </div>
@@ -170,15 +170,12 @@ export default function Graphic() {
                   </div>
 
                   {/* Creative Elements */}
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-center">
                     <div className="flex space-x-2">
                       <div className="w-6 h-6 border-2 border-gray-300 rounded hover:border-pink-500 transition-colors cursor-pointer"></div>
                       <div className="w-6 h-6 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full hover:scale-110 transition-transform cursor-pointer"></div>
                       <div className="w-6 h-6 border-2 border-gray-300 rotate-45 hover:border-green-500 transition-colors cursor-pointer"></div>
                     </div>
-                    <button className={`px-6 py-2 bg-gradient-to-r ${service.color} text-white font-bold rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105`}>
-                      Create Now
-                    </button>
                   </div>
                 </div>
 
@@ -199,9 +196,9 @@ export default function Graphic() {
               <span className="text-gray-600 font-mono text-sm">READY TO CREATE?</span>
               <div className="w-8 h-1 bg-gradient-to-l from-blue-500 to-transparent"></div>
             </div>
-            <button className="px-12 py-4 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white font-bold rounded-full hover:from-pink-400 hover:via-purple-400 hover:to-blue-400 transition-all duration-300 text-lg transform hover:scale-110 shadow-2xl">
+            <a href="/contact" className="inline-block px-12 py-4 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white font-bold rounded-full hover:from-pink-400 hover:via-purple-400 hover:to-blue-400 transition-all duration-300 text-lg transform hover:scale-110 shadow-2xl">
               🎨 START YOUR PROJECT
-            </button>
+            </a>
             
             <div className="mt-8">
               <p className="text-gray-600 text-sm max-w-2xl mx-auto">

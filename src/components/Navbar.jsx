@@ -1,15 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOnLightSection, setIsOnLightSection] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const sections = document.querySelectorAll('section, div[class*="bg-white"], div[class*="bg-gray-100"], div[class*="from-gray-100"]');
+      
+      let onLightSection = false;
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 100 && rect.bottom >= 100) {
+          const bgClasses = section.className;
+          if (bgClasses.includes('bg-white') || bgClasses.includes('bg-gray-100') || bgClasses.includes('from-gray-100')) {
+            onLightSection = true;
+          }
+        }
+      });
+      
+      setIsOnLightSection(onLightSection);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial state
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-sm px-0 py-3 font-['Slackey']">
+    <nav className="fixed top-0 left-0 w-full z-50 px-0 py-3 font-['Slackey'] bg-transparent backdrop-blur-sm transition-all duration-300">
       <div className="w-full flex justify-between items-center md:px-8 px-4">
         {/* Logo Left (flush to edge) */}
         <Link to="/" className="flex items-center">
@@ -22,19 +47,19 @@ const Navbar = () => {
 
         {/* Desktop Menu (centered) */}
         <div className="hidden md:flex flex-1 justify-center space-x-10">
-          <Link to="/" className="text-white hover:text-orange-400 text-sm transition-colors duration-300">
+          <Link to="/" className={`${isOnLightSection ? 'text-black hover:text-orange-600' : 'text-white hover:text-orange-400'} text-sm transition-colors duration-300`}>
             Home
           </Link>
-          <Link to="/animation" className="text-white hover:text-orange-400 text-sm transition-colors duration-300">
+          <Link to="/animation" className={`${isOnLightSection ? 'text-black hover:text-orange-600' : 'text-white hover:text-orange-400'} text-sm transition-colors duration-300`}>
             Animation
           </Link>
-          <Link to="/app-development" className="text-white hover:text-orange-400 text-sm transition-colors duration-300">
+          <Link to="/app-development" className={`${isOnLightSection ? 'text-black hover:text-orange-600' : 'text-white hover:text-orange-400'} text-sm transition-colors duration-300`}>
             App Development
           </Link>
-          <Link to="/digital" className="text-white hover:text-orange-400 text-sm transition-colors duration-300">
+          <Link to="/digital" className={`${isOnLightSection ? 'text-black hover:text-orange-600' : 'text-white hover:text-orange-400'} text-sm transition-colors duration-300`}>
             Digital Marketing
           </Link>
-          <Link to="/web" className="text-white hover:text-orange-400 text-sm transition-colors duration-300">
+          <Link to="/web" className={`${isOnLightSection ? 'text-black hover:text-orange-600' : 'text-white hover:text-orange-400'} text-sm transition-colors duration-300`}>
             Web Development
           </Link>
         </div>
@@ -43,7 +68,11 @@ const Navbar = () => {
         <div className="hidden md:block">
           <Link
             to="/contact"
-            className="px-5 py-2 border-2 border-orange-500 rounded-xl text-orange-400 text-lg hover:bg-orange-500 hover:text-black transition-all duration-300 shadow-lg"
+            className={`px-5 py-2 border-2 rounded-xl text-lg transition-all duration-300 shadow-lg ${
+              isOnLightSection 
+                ? 'border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white' 
+                : 'border-orange-500 text-orange-400 hover:bg-orange-500 hover:text-black'
+            }`}
           >
             Contact
           </Link>
@@ -51,7 +80,9 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white focus:outline-none"
+          className={`md:hidden focus:outline-none transition-colors duration-300 ${
+            isOnLightSection ? 'text-black' : 'text-white'
+          }`}
           onClick={toggleMenu}
         >
           {isMenuOpen ? (
@@ -68,26 +99,30 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-black/95 absolute top-full left-0 w-full border-t border-gray-800 py-4">
+        <div className="md:hidden bg-black/95 backdrop-blur-md absolute top-full left-0 w-full border-t border-gray-800 py-4">
           <div className="flex flex-col space-y-4 px-4">
-            <Link to="/" className="text-white hover:text-orange-400 transition-colors duration-300" onClick={toggleMenu}>
+            <Link to="/" className={`${isOnLightSection ? 'text-black hover:text-orange-600' : 'text-white hover:text-orange-400'} transition-colors duration-300`} onClick={toggleMenu}>
               Home
             </Link>
-            <Link to="/animation" className="text-white hover:text-orange-400 transition-colors duration-300" onClick={toggleMenu}>
+            <Link to="/animation" className={`${isOnLightSection ? 'text-black hover:text-orange-600' : 'text-white hover:text-orange-400'} transition-colors duration-300`} onClick={toggleMenu}>
               Animation
             </Link>
-            <Link to="/app-development" className="text-white hover:text-orange-400 transition-colors duration-300" onClick={toggleMenu}>
+            <Link to="/app-development" className={`${isOnLightSection ? 'text-black hover:text-orange-600' : 'text-white hover:text-orange-400'} transition-colors duration-300`} onClick={toggleMenu}>
               App Development
             </Link>
-            <Link to="/digital" className="text-white hover:text-orange-400 transition-colors duration-300" onClick={toggleMenu}>
+            <Link to="/digital" className={`${isOnLightSection ? 'text-black hover:text-orange-600' : 'text-white hover:text-orange-400'} transition-colors duration-300`} onClick={toggleMenu}>
               Digital Marketing
             </Link>
-            <Link to="/web" className="text-white hover:text-orange-400 transition-colors duration-300" onClick={toggleMenu}>
+            <Link to="/web" className={`${isOnLightSection ? 'text-black hover:text-orange-600' : 'text-white hover:text-orange-400'} transition-colors duration-300`} onClick={toggleMenu}>
               Web Development
             </Link>
             <Link
               to="/contact"
-              className="px-5 py-2 border-2 border-orange-500 rounded-xl text-orange-400 text-lg hover:bg-orange-500 hover:text-black transition-all duration-300 shadow-lg text-center"
+              className={`px-5 py-2 border-2 rounded-xl text-lg transition-all duration-300 shadow-lg text-center ${
+                isOnLightSection 
+                  ? 'border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white' 
+                  : 'border-orange-500 text-orange-400 hover:bg-orange-500 hover:text-black'
+              }`}
               onClick={toggleMenu}
             >
               Contact

@@ -70,7 +70,7 @@ function Interior() {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-white mb-4 font-['Slackey']">
+          <h1 className="text-4xl font-bold text-white mb-4 font-mono">
             Architectural Design
           </h1>
           <p className="text-xl text-gray-400">
@@ -158,15 +158,16 @@ function Interior() {
               </ul>
 
               {/* Button */}
-              <button 
-                className="w-full py-2 text-white text-xs border-0 rounded-full cursor-pointer"
+              <a 
+                href="/contact"
+                className="block w-full py-2 text-white text-xs border-0 rounded-full cursor-pointer text-center"
                 style={{
                   backgroundImage: index === 0 ? 'linear-gradient(0deg, hsl(189, 92%, 58%), hsl(189, 99%, 26%) 100%)' : 'linear-gradient(0deg, hsl(280, 92%, 58%), hsl(280, 99%, 26%) 100%)',
                   boxShadow: 'inset 0 -2px 25px -4px rgba(255, 255, 255, 0.3)'
                 }}
               >
                 Get Your Design
-              </button>
+              </a>
             </div>
           ))}
         </div>

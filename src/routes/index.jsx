@@ -5,6 +5,7 @@ import AnimationPage from '../pages/AnimationPage';
 import AppDevelopmentPage from '../pages/AppDevelopmentPage';
 import DigitalPage from '../pages/DigitalPage';
 import WebPage from '../pages/WebPage';
+import Contact from '../pages/Contact';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
         path: 'web',
         element: <WebPage />,
       },
+      {
+        path: 'contact',
+        element: <Contact />,
+      }
     ],
   },
 ]);

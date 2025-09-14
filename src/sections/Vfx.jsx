@@ -56,7 +56,7 @@ function Vfx() {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <h1 className="text-6xl font-bold font-['Slackey'] mb-4 bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-pulse">
+            <h1 className="text-4xl font-bold font-sans] mb-4 bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent ">
               VFX SERVICES
             </h1>
             <div className="w-32 h-1 bg-gradient-to-r from-green-400 to-blue-500 mx-auto mb-6"></div>
@@ -113,9 +113,9 @@ function Vfx() {
 
           {/* Bottom CTA */}
           <div className="text-center mt-16">
-            <button className="px-8 py-4 bg-gradient-to-r from-green-500 to-blue-600 text-black font-bold rounded-lg hover:from-green-400 hover:to-blue-500 transition-all duration-300 text-lg font-mono tracking-wider transform hover:scale-110 shadow-lg shadow-green-500/30">
+            <a href="/contact" className="inline-block px-8 py-4 bg-gradient-to-r from-green-500 to-blue-600 text-black font-bold rounded-lg hover:from-green-400 hover:to-blue-500 transition-all duration-300 text-lg font-mono tracking-wider transform hover:scale-110 shadow-lg shadow-green-500/30">
               [ INITIATE VFX PROJECT ]
-            </button>
+            </a>
             
             <div className="mt-8">
               <p className="text-green-400 text-lg mb-2 font-mono">

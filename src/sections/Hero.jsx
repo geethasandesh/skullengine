@@ -27,7 +27,7 @@ const Hero = () => {
             Professional animation services with a unique skull-themed style. We create captivating visuals that leave a lasting impression.
           </p>
           <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <a href="#" className="px-8 py-3 bg-gradient-to-r from-red-600 to-red-800 text-white font-medium rounded-md hover:from-red-700 hover:to-red-900 transition-all duration-300 shadow-lg shadow-red-500/20 text-center">
+            <a href="/contact" className="px-8 py-3 bg-gradient-to-r from-red-600 to-red-800 text-white font-medium rounded-md hover:from-red-700 hover:to-red-900 transition-all duration-300 shadow-lg shadow-red-500/20 text-center">
               Get Started
             </a>
             <a href="#" className="px-8 py-3 bg-transparent border border-gray-700 text-white font-medium rounded-md hover:bg-gray-800 transition-all duration-300 text-center">

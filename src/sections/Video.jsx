@@ -77,7 +77,7 @@ function Video() {
           <div className="text-center mb-16">
             <div className="flex items-center justify-center mb-6">
               <div className="w-4 h-4 bg-red-500 rounded-full animate-pulse mr-3"></div>
-              <h1 className="text-6xl font-bold text-white font-['Slackey'] bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+              <h1 className="text-4xl font-bold text-white font-mono] bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
                 VIDEO PRODUCTION
               </h1>
               <div className="w-4 h-4 bg-red-500 rounded-full animate-pulse ml-3"></div>
@@ -157,9 +157,9 @@ function Video() {
 
           {/* Bottom CTA */}
           <div className="text-center mt-16">
-            <button className="px-12 py-4 bg-gradient-to-r from-red-600 via-purple-600 to-blue-600 text-white font-bold rounded-full hover:from-red-500 hover:via-purple-500 hover:to-blue-500 transition-all duration-300 text-lg transform hover:scale-110 shadow-2xl">
+            <a href="/contact" className="inline-block px-12 py-4 bg-gradient-to-r from-red-600 via-purple-600 to-blue-600 text-white font-bold rounded-full hover:from-red-500 hover:via-purple-500 hover:to-blue-500 transition-all duration-300 text-lg transform hover:scale-110 shadow-2xl">
               🎬 START YOUR VIDEO PROJECT
-            </button>
+            </a>
             
             <div className="mt-8">
               <p className="text-red-400 text-lg mb-2 font-mono animate-pulse">

@@ -5,32 +5,38 @@ function Animation() {
     { 
       name: 'Modeling', 
       icon: '🎨',
-      description: 'Create detailed 3D models and characters with precision and artistic flair for your projects.'
+      description: 'Create detailed 3D models and characters with precision and artistic flair for your projects.',
+      subcategories: ['3D Characters', 'Props', 'Environments/VFX Sets', 'Low-poly Game Assets']
     },
     { 
       name: 'Texturing', 
       icon: '🖌️',
-      description: 'Apply realistic textures and materials to bring your 3D models to life with stunning detail.'
+      description: 'Apply realistic textures and materials to bring your 3D models to life with stunning detail.',
+      subcategories: ['UV Unwrapping', 'Materials']
     },
     { 
       name: 'Rigging', 
       icon: '🦴',
-      description: 'Build flexible skeletal systems that enable smooth and natural character movements.'
+      description: 'Build flexible skeletal systems that enable smooth and natural character movements.',
+      subcategories: ['3D Character Rig', 'Props Rig', 'Vehicles Rig']
     },
     { 
       name: 'Animation', 
       icon: '🎬',
-      description: 'Craft fluid animations that tell compelling stories and engage your audience.'
+      description: 'Craft fluid animations that tell compelling stories and engage your audience.',
+      subcategories: ['Layout & Blocking', 'Character Animation', 'Prop Animation', 'Camera Animation', 'Facial Animation & Lip Sync']
     },
     { 
       name: 'Lighting', 
       icon: '💡',
-      description: 'Set the perfect mood and atmosphere with professional lighting techniques.'
+      description: 'Set the perfect mood and atmosphere with professional lighting techniques.',
+      subcategories: ['Scene Setup & Light Placement', 'Key Light', 'Fill Light', 'Rim & Back Light', 'Environment & HDRI Lighting', 'Practical Lights', 'Shadow Setup', 'Global Illumination', 'Optimization', 'Final Lighting Passes (for Compositing)']
     },
     { 
       name: 'Rendering', 
       icon: '⚡',
-      description: 'Produce high-quality final outputs with photorealistic rendering technology.'
+      description: 'Produce high-quality final outputs with photorealistic rendering technology.',
+      subcategories: ['Render Settings', 'Test Rendering', 'Final Render']
     }
   ]
 
@@ -61,7 +67,7 @@ function Animation() {
           {services.map((service, index) => (
             <div
               key={service.name}
-              className="group relative bg-white/10 backdrop-blur-md border-1 border-orange-500 rounded-xl p-8 h-64 hover:bg-white/10 hover:backdrop-blur-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl animate-slide-up"
+              className="group relative bg-white/10 backdrop-blur-md border-1 border-orange-500 rounded-xl p-6 hover:bg-white/10 hover:backdrop-blur-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl animate-slide-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="text-center">
@@ -71,9 +77,19 @@ function Animation() {
                 <h3 className="text-xl font-semibold text-white mb-3">
                   {service.name}
                 </h3>
-                <p className="text-amber-50 text-sm leading-relaxed">
+                <p className="text-amber-50 text-sm leading-relaxed mb-4">
                   {service.description}
                 </p>
+                <div className="text-left">
+                  <ul className={`text-gray-300 text-xs space-y-1 ${service.subcategories.length > 6 ? 'grid grid-cols-2 gap-x-4 gap-y-1' : ''}`}>
+                    {service.subcategories.map((sub, subIndex) => (
+                      <li key={subIndex} className="flex items-center">
+                        <span className="w-1 h-1 bg-orange-500 rounded-full mr-2 flex-shrink-0"></span>
+                        <span className="text-xs leading-tight">{sub}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
               
               <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-red-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
@@ -82,9 +98,9 @@ function Animation() {
         </div>
         
         <div className="text-center mt-12">
-          <button className="px-8 py-3 bg-gradient-to-r from-red-600 to-red-800 text-white font-medium rounded-lg hover:bg-orange-400 transition-colors duration-300 text-lg">
-            View More Services
-          </button>
+          <a href="/contact" className="inline-block px-8 py-3 bg-gradient-to-r from-red-600 to-red-800 text-white font-medium rounded-lg hover:bg-orange-400 transition-colors duration-300 text-lg">
+            Let's Create Together
+          </a>
           
           <div className="mt-8 text-center">
             <p className="text-red-500 text-lg mb-4">
