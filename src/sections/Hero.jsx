@@ -32,7 +32,7 @@ const Hero = () => {
       <div
         className="absolute left-0 right-0 bottom-0 top-1/2 z-10"
         style={{
-          backgroundImage: 'radial-gradient(rgba(255,255,255,0.6) 1px, rgba(255,255,255,0) 1px)',
+          backgroundImage: 'radial-gradient(rgba(255,255,255,0.28) 1px, rgba(255,255,255,0) 1px)',
           backgroundSize: '10px 10px',
           backgroundPosition: 'center top'
         }}

@@ -46,36 +46,36 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Menu (centered) */}
-        <div className="hidden lg:flex flex-1 justify-center space-x-4 xl:space-x-5">
+        <div className="hidden lg:flex flex-1 justify-center items-center space-x-4 xl:space-x-3">
          
-          <Link to="/animation" className={`text-orange-600 hover:text-white text-sm transition-colors duration-300`}>
+          <Link to="/animation" className={`text-orange-600 hover:text-white text-xs transition-colors duration-300`}>
             3D Animation
           </Link>
-          <Link to="/vfx" className={`text-orange-600 hover:text-white text-sm transition-colors duration-300`}>
+          <Link to="/vfx" className={`text-orange-600 hover:text-white text-xs transition-colors duration-300`}>
             VFX
           </Link>
-          <Link to="/interior" className={`text-orange-600 hover:text-white text-sm transition-colors duration-300`}>
+          <Link to="/interior" className={`text-orange-600 hover:text-white text-xs transition-colors duration-300`}>
             3D Interior & Exterior
           </Link>
-          <Link to="/video" className={`text-orange-600 hover:text-white text-sm transition-colors duration-300`}>
+          <Link to="/video" className={`text-orange-600 hover:text-white text-xs transition-colors duration-300`}>
             Video Editing
           </Link>
-          <Link to="/graphic" className={`text-orange-600 hover:text-white text-sm transition-colors duration-300`}>
+          <Link to="/graphic" className={`text-orange-600 hover:text-white text-xs transition-colors duration-300`}>
             Graphic Design
           </Link>
-          <Link to="/digital" className={`text-orange-600 hover:text-white text-sm transition-colors duration-300`}>
+          <Link to="/digital" className={`text-orange-600 hover:text-white text-xs transition-colors duration-300`}>
             Digital Marketing
           </Link>
           <div className="relative group">
-            <span className={`text-orange-600 hover:text-white text-sm transition-colors duration-300 cursor-pointer select-none`}>
+            <Link to="/web" className={`text-orange-600 hover:text-white text-xs transition-colors duration-300 cursor-pointer select-none inline-block`}>
               Web & App
-            </span>
+            </Link>
             <div className={`invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute top-full left-1/2 -translate-x-1/2 mt-2 min-w-[12rem] rounded-lg border ${isOnLightSection ? 'bg-transparent border-white/60 ring-1 ring-black/10 shadow-xl' : 'bg-transparent border-white/10 ring-1 ring-white/15 shadow-xl'} transition-opacity duration-200 z-50`}>
-              <div className="py-2">
-                <Link to="/web" className={`text-orange-600 hover:text-white block px-4 py-2 text-sm transition-colors duration-200`}>
+              <div className="py-1.5">
+                <Link to="/web" className={`text-orange-600 hover:text-white block px-3 py-1.5 text-xs transition-colors duration-200`}>
                   Web Development
                 </Link>
-                <Link to="/app-development" className={`text-orange-600 hover:text-white block px-4 py-2 text-sm transition-colors duration-200`}>
+                <Link to="/app-development" className={`text-orange-600 hover:text-white block px-3 py-1.5 text-xs transition-colors duration-200`}>
                   App Development
                 </Link>
               </div>
