@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from 'framer-motion';
+import { fadeInUp, staggerContainer } from '../constants/motion';
 
 function Interior() {
   const services = [
@@ -18,9 +20,9 @@ function Interior() {
   ];
 
   return (
-    <div className="min-h-screen bg-black/80 backdrop-blur-md py-20 px-8 flex items-center justify-center relative overflow-hidden">
+    <motion.div className="min-h-screen bg-black/80 backdrop-blur-md py-20 px-8 flex items-center justify-center relative overflow-hidden" initial="hidden" whileInView="show" viewport={{ amount: 0.2, once: true }} variants={staggerContainer(0.1, 0.08)}>
       {/* Interior/Exterior Background Elements */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
+      <div className="absolute inset-0 opacity-10">
         {/* House/Building SVGs */}
         {Array.from({length: 12}, (_, i) => (
           <div
@@ -68,12 +70,12 @@ function Interior() {
           />
         ))}
       </div>
-      <div className="max-w-4xl mx-auto relative z-10">
+      <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-white mb-4 font-mono">
+          <motion.h1 variants={fadeInUp} className="scroll-mt-nav text-4xl font-bold text-white mb-4 font-mono">
             ARCHITECTURAL DESIGN
-          </h1>
+          </motion.h1>
           <p className="text-xl text-gray-400">
             Professional 3D visualization services
           </p>
@@ -82,7 +84,7 @@ function Interior() {
         {/* Service Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={service.title}
               className="card relative flex flex-col gap-4 p-4 w-80 rounded-2xl"
               style={{
@@ -104,6 +106,7 @@ function Interior() {
                 `,
                 boxShadow: '0px -16px 24px 0px rgba(255, 255, 255, 0.25) inset'
               }}
+              variants={fadeInUp}
             >
               {/* Animated Border */}
               <div 
@@ -159,8 +162,8 @@ function Interior() {
               </ul>
 
               {/* Button */}
-              <a 
-                href="/contact"
+              <Link 
+                to="/contact"
                 className="block w-full py-2 text-white text-xs border-0 rounded-full cursor-pointer text-center"
                 style={{
                   backgroundImage: index === 0 ? 'linear-gradient(0deg, hsl(189, 92%, 58%), hsl(189, 99%, 26%) 100%)' : 'linear-gradient(0deg, hsl(280, 92%, 58%), hsl(280, 99%, 26%) 100%)',
@@ -168,14 +171,17 @@ function Interior() {
                 }}
               >
                 Get Your Design
-              </a>
-            </div>
+              </Link>
+            </motion.div>
           ))}
         </div>
 
         {/* CTA Button */}
         <div className="text-center mt-12">
-          <Link to="/contact" className="inline-block px-12 py-4 bg-gradient-to-r from-blue-300 via-purple-300 to-purple-400 text-white font-bold rounded-full hover:from-blue-500 hover:via-blur-300 hover:to-purple-300 transition-all duration-300 text-lg transform hover:scale-90 shadow-2xl">
+          <Link
+            to="/contact"
+            className="inline-block px-12 py-4 bg-gradient-to-r from-blue-300 via-purple-300 to-purple-400 text-white font-bold rounded-full hover:from-red-500 hover:via-purple-500 hover:to-blue-500 transition-all duration-300 text-lg transform hover:scale-110 shadow-2xl"
+          >
             LET'S MAKE YOURS
           </Link>
         </div>
@@ -191,7 +197,7 @@ function Interior() {
           animation: spin 8s linear infinite;
         }
       `}</style>
-    </div>
+    </motion.div>
   );
 }
 

@@ -1,4 +1,6 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { fadeInUp, staggerContainer } from '../constants/motion';
 
 const Web = () => {
   const webServices = [
@@ -33,7 +35,7 @@ const Web = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-gray-900 relative overflow-hidden">
+    <motion.div className="min-h-screen bg-gradient-to-br from-slate-900 to-gray-900 relative overflow-hidden" initial="hidden" whileInView="show" viewport={{ amount: 0.2, once: true }} variants={staggerContainer(0.1, 0.08)}>
       {/* Web Development Background Elements */}
       <div className="absolute inset-0 opacity-20">
         {/* Web Elements */}
@@ -121,11 +123,9 @@ const Web = () => {
           <div className="text-center mb-16">
             <div className="flex items-center justify-center mb-6">
               <div className="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
-              <div className="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
-              <div className="w-3 h-3 bg-green-500 rounded-full mr-6"></div>
-              <h1 className="text-4xl font-bold bg-gradient-to-r from-orange-400 via-red-500 to-pink-600 bg-clip-text text-transparent font-">
+              <motion.h1 variants={fadeInUp} className="scroll-mt-nav text-4xl font-bold bg-gradient-to-r from-orange-400 via-red-500 to-pink-600 bg-clip-text text-transparent font-">
                 WEB DEVELOPMENT
-              </h1>
+              </motion.h1>
               <div className="w-3 h-3 bg-blue-500 rounded-full ml-6"></div>
               <div className="w-3 h-3 bg-purple-500 rounded-full ml-2"></div>
               <div className="w-3 h-3 bg-orange-500 rounded-full ml-2"></div>
@@ -138,10 +138,11 @@ const Web = () => {
           {/* Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {webServices.map((service, index) => (
-              <div
+              <motion.div
                 key={service.title}
                 className="group relative bg-slate-800/80 backdrop-blur-sm rounded-2xl p-8 border border-slate-600 hover:border-orange-500 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-orange-500/20 overflow-hidden"
                 style={{animationDelay: `${index * 0.2}s`}}
+                variants={fadeInUp}
               >
                 {/* Browser Header */}
                 <div className="absolute top-0 left-0 w-full h-8 bg-slate-700 border-b border-slate-600 flex items-center px-4 rounded-t-2xl">
@@ -209,24 +210,19 @@ const Web = () => {
                     <div className="w-6 h-1 bg-purple-400"></div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
           {/* Bottom CTA */}
           <div className="text-center mt-12">
-            <div className="inline-flex items-center space-x-4 mb-6">
-              <div className="w-8 h-1 bg-gradient-to-r from-orange-500 to-transparent"></div>
-              <span className="text-gray-300 font-mono text-sm">READY_TO_BUILD?</span>
-              <div className="w-8 h-1 bg-gradient-to-l from-red-500 to-transparent"></div>
-            </div>
             <a href="/contact" className="inline-block px-12 py-4 bg-gradient-to-r from-orange-500 via-red-500 to-pink-600 text-white font-bold rounded-lg hover:from-orange-400 hover:via-red-400 hover:to-pink-500 transition-all duration-300 text-lg transform hover:scale-110 shadow-2xl">
               🌐 DEPLOY_WEBSITE()
             </a>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

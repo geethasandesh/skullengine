@@ -1,5 +1,6 @@
 // Hero.jsx
 import React, { useRef } from 'react';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
   const heroRef = useRef(null);
@@ -53,20 +54,41 @@ const Hero = () => {
         
         {/* Text Section */}
         <div ref={textRef} className="w-full max-w-3xl mb-8">
-          <h1 className="font-['Slackey'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-purple-600 leading-tight">
+          <motion.h1
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+            className="scroll-mt-nav font-['Slackey'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-purple-600 leading-tight"
+          >
             Skull Engine
-          </h1>
-          <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-4 sm:mb-6 lg:mb-8 px-2 sm:px-0">
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: 'easeOut', delay: 0.05 }}
+            className="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-4 sm:mb-6 lg:mb-8 px-2 sm:px-0"
+          >
             Bringing your animations to life with a dark, edgy aesthetic
-          </p>
-          <p className="text-sm sm:text-base text-gray-400 mb-6 sm:mb-8 max-w-2xl mx-auto px-4 sm:px-0 leading-relaxed">
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
+            className="text-sm sm:text-base text-gray-400 mb-6 sm:mb-8 max-w-2xl mx-auto px-4 sm:px-0 leading-relaxed"
+          >
             Professional animation services with a unique skull-themed style. We create captivating visuals that leave a lasting impression.
-          </p>
-          <div ref={ctaRef} className="flex justify-center px-4 sm:px-0">
+          </motion.p>
+          <motion.div
+            ref={ctaRef}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: 'easeOut', delay: 0.15 }}
+            className="flex justify-center px-4 sm:px-0"
+          >
             <a href="/contact" className="px-6 sm:px-8 py-3 bg-gradient-to-r from-red-600 to-red-800 text-white font-medium rounded-md hover:from-red-700 hover:to-red-900 transition-all duration-300 shadow-lg shadow-red-500/20 text-center text-sm sm:text-base">
               Get Started
             </a>
-          </div>
+          </motion.div>
 
           {/* Spacer to ensure dots start under CTA */}
           <div className="mt-8" />

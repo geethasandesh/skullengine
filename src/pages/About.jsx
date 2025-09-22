@@ -1,4 +1,6 @@
 import React from 'react'
+import { motion } from 'framer-motion'
+import { fadeInUp, staggerContainer } from '../constants/motion'
 
 function About() {
   const stats = [
@@ -21,7 +23,7 @@ function About() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+    <motion.div className="min-h-screen bg-black text-white relative overflow-hidden" initial="hidden" whileInView="show" viewport={{ amount: 0.2, once: true }} variants={staggerContainer(0.1, 0.08)}>
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-10">
         {Array.from({length: 20}, (_, i) => (
@@ -43,9 +45,9 @@ function About() {
         <div className="container mx-auto px-4">
           {/* Header */}
           <div className="text-center mb-12 sm:mb-16 px-4">
-            <h1 className="font-['Slackey'] text-3xl sm:text-4xl md:text-4xl lg:text-4xl mb-4 sm:mb-6 bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent leading-tight">
+            <motion.h1 variants={fadeInUp} className="scroll-mt-nav font-['Slackey'] text-3xl sm:text-4xl md:text-4xl lg:text-4xl mb-4 sm:mb-6 bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent leading-tight">
               About SkullEngine
-            </h1>
+            </motion.h1>
             <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               We are a creative digital studio specializing in cutting-edge animation, web development, 
               and digital marketing solutions. Our passion drives us to transform ideas into extraordinary digital experiences.
@@ -55,7 +57,7 @@ function About() {
           {/* Stats Section */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16 lg:mb-20 px-4">
             {stats.map((stat, index) => (
-              <div key={stat.label} className="text-center group">
+              <motion.div key={stat.label} className="text-center group" variants={fadeInUp}>
                 <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 border border-slate-700 hover:border-orange-500/50 transition-all duration-300 hover:-translate-y-2">
                   <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-500 mb-1 sm:mb-2 group-hover:scale-110 transition-transform duration-300">
                     {stat.number}
@@ -64,13 +66,13 @@ function About() {
                     {stat.label}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
           {/* Our Story */}
           <div className="mb-20">
-            <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-slate-700/50">
+            <motion.div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-slate-700/50" variants={fadeInUp}>
               <h2 className="text-3xl font-bold text-orange-500 mb-6 text-center">
                 Our Story
               </h2>
@@ -102,7 +104,7 @@ function About() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Services Overview */}
@@ -112,7 +114,7 @@ function About() {
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {services.map((service, index) => (
-                <div key={service.name} className="group">
+                <motion.div key={service.name} className="group" variants={fadeInUp}>
                   <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-6 border border-slate-700 hover:border-orange-500/50 transition-all duration-300 hover:-translate-y-2 text-center">
                     <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300">
                       {service.icon}
@@ -124,13 +126,10 @@ function About() {
                       {service.projects} Projects
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
-
-          {/* Team Section */}
-         
 
           {/* Why Choose Us */}
           <div className="mb-20">
@@ -138,32 +137,24 @@ function About() {
               Why Choose SkullEngine?
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 hover:border-orange-500/50 transition-all duration-300">
-                <div className="text-3xl mb-4">⚡</div>
-                <h3 className="font-bold text-white mb-3">Lightning Fast Delivery</h3>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  We understand deadlines matter. Our streamlined processes ensure quick turnaround without compromising quality.
-                </p>
-              </div>
-              <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 hover:border-orange-500/50 transition-all duration-300">
-                <div className="text-3xl mb-4">🎯</div>
-                <h3 className="font-bold text-white mb-3">Precision & Quality</h3>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  Every pixel, every line of code, every animation frame is crafted with meticulous attention to detail.
-                </p>
-              </div>
-              <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 hover:border-orange-500/50 transition-all duration-300">
-                <div className="text-3xl mb-4">🚀</div>
-                <h3 className="font-bold text-white mb-3">Innovation First</h3>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  We stay ahead of trends and technologies to deliver cutting-edge solutions that give you a competitive edge.
-                </p>
-              </div>
+              {[0,1,2].map((i) => (
+                <motion.div key={i} className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 hover:border-orange-500/50 transition-all duration-300" variants={fadeInUp}>
+                  <div className="text-3xl mb-4">{['⚡','🎯','🚀'][i]}</div>
+                  <h3 className="font-bold text-white mb-3">{['Lightning Fast Delivery','Precision & Quality','Innovation First'][i]}</h3>
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    {[
+                      'We understand deadlines matter. Our streamlined processes ensure quick turnaround without compromising quality.',
+                      'Every pixel, every line of code, every animation frame is crafted with meticulous attention to detail.',
+                      'We stay ahead of trends and technologies to deliver cutting-edge solutions that give you a competitive edge.'
+                    ][i]}
+                  </p>
+                </motion.div>
+              ))}
             </div>
           </div>
 
           {/* CTA Section */}
-          <div className="text-center">
+          <motion.div className="text-center" variants={fadeInUp}>
             <div className="bg-gradient-to-r from-orange-500/10 to-red-600/10 rounded-3xl p-8 border border-orange-500/30">
               <h2 className="text-3xl font-bold text-white mb-4">
                 Ready to Create Something Extraordinary?
@@ -178,10 +169,10 @@ function About() {
                 🚀 Start Your Project
               </a>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

@@ -12,6 +12,11 @@
 }
 
 @layer utilities {
+  /* Anchor offset so headers don't hide behind fixed navbar */
+  .scroll-mt-nav {
+    scroll-margin-top: 6rem; /* ~96px for desktop, safe for mobile too */
+  }
+
   .text-shadow {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   }

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { motion } from 'framer-motion';
+import { fadeInUp, staggerContainer } from '../constants/motion';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -96,7 +98,7 @@ function Contact() {
   ];
 
   return (
-    <div className="min-h-screen bg-black py-20 relative overflow-hidden">
+    <motion.div className="min-h-screen bg-black py-20 relative overflow-hidden" initial="hidden" whileInView="show" viewport={{ amount: 0.2, once: true }} variants={staggerContainer(0.1, 0.08)}>
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-20">
         {Array.from({length: 15}, (_, i) => {
@@ -124,9 +126,9 @@ function Contact() {
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16 px-4">
-          <h1 className="font-['slackey'] text-3xl sm:text-4xl mb-6 sm:mb-8 bg-clip-text text-orange-500">
+          <motion.h1 variants={fadeInUp} className="scroll-mt-nav font-['slackey'] text-3xl sm:text-4xl mb-6 sm:mb-8 bg-clip-text text-orange-500">
             Get In Touch
-          </h1>
+          </motion.h1>
           <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-4 max-w-3xl mx-auto">
             Ready to bring your ideas to life? Let's start a conversation about your next project.
           </p>
@@ -134,7 +136,7 @@ function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-12 sm:mb-16 px-4">
           {/* Contact Form */}
-          <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-600/50 rounded-2xl p-8 shadow-xl hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300">
+          <motion.div className="bg-slate-800/60 backdrop-blur-sm border border-slate-600/50 rounded-2xl p-8 shadow-xl hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300" variants={fadeInUp}>
             <div className="flex items-center mb-6">
               <div className="p-3 bg-gradient-to-r from-red-600 to-red-800 text-white mr-4">
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -250,10 +252,10 @@ function Contact() {
                 </svg>
               </button>
             </form>
-          </div>
+          </motion.div>
 
           {/* Contact Information */}
-          <div className="space-y-6">
+          <motion.div className="space-y-6" variants={fadeInUp}>
             <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-600/50 rounded-2xl p-8 shadow-xl hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300">
               <h2 className="text-2xl font-bold text-white mb-6">Let's Connect</h2>
               <p className="text-gray-300 mb-8 leading-relaxed">
@@ -310,11 +312,11 @@ function Contact() {
                 call us directly for immediate assistance.
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
         
         {/* FAQ Section */}
-        <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-600/50 rounded-2xl p-8 shadow-xl">
+        <motion.div className="bg-slate-800/60 backdrop-blur-sm border border-slate-600/50 rounded-2xl p-8 shadow-xl" variants={fadeInUp}>
           <h2 className="text-3xl font-bold text-white mb-8 text-center">Frequently Asked Questions</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
@@ -346,9 +348,9 @@ function Contact() {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

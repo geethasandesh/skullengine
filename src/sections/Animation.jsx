@@ -1,4 +1,6 @@
 import React from 'react'
+import { motion } from 'framer-motion'
+import { fadeInUp, staggerContainer } from '../constants/motion'
 
 function Animation() {
   const services = [
@@ -67,7 +69,7 @@ function Animation() {
   ]
 
   return (
-    <div className="relative p-8 pb-16 bg-black overflow-hidden">
+    <motion.div className="relative p-8 pb-16 bg-black overflow-hidden" initial="hidden" whileInView="show" viewport={{ amount: 0.2, once: true }} variants={staggerContainer(0.1, 0.08)}>
       {/* Animated Doodle Background */}
       <div className="absolute inset-0 opacity-40">
         {Array.from({length: 100}, (_, i) => [1,2,3,4,5,6,7][i % 7]).map((num, index) => (
@@ -85,16 +87,17 @@ function Animation() {
         ))}
       </div>
       <div className="max-w-6xl mx-auto relative z-10">
-        <h2 className="text-4xl font-bold text-center mb-12 animate-fade-in font-['Slackey']">
+        <motion.h2 variants={fadeInUp} className="scroll-mt-nav text-4xl font-bold text-center mb-12 font-['Slackey']">
           3d Animation Services
-        </h2>
+        </motion.h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={service.name}
               className="group relative bg-white/10 backdrop-blur-md border-1 border-orange-500 rounded-xl p-6 hover:bg-white/10 hover:backdrop-blur-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl animate-slide-up"
               style={{ animationDelay: `${index * 0.1}s` }}
+              variants={fadeInUp}
             >
               <div className="text-center">
                 <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -119,7 +122,7 @@ function Animation() {
               </div>
               
               <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-red-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
-            </div>
+            </motion.div>
           ))}
         </div>
         
@@ -159,7 +162,7 @@ function Animation() {
           animation: float 3s ease-in-out infinite;
         }
       `}</style>
-    </div>
+    </motion.div>
   )
 }
 
