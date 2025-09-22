@@ -5,27 +5,49 @@ function Vfx() {
     {
       category: 'Matchmove',
       services: ['Footage Analysis', 'Tracking (2D/3D)', 'Camera Tracking', 'Object Tracking'],
-      icon: <svg className="w-8 h-8" fill="#00ff41" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+      icon: (
+        <svg className="w-8 h-8 text-green-400" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1Zm9 10a1 1 0 0 1-1 1h-2a1 1 0 1 1 0-2h2a1 1 0 0 1 1 1ZM12 19a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1ZM5 13a1 1 0 0 1 0-2H3a1 1 0 1 1 0-2h2a1 1 0 0 1 0 2H3a1 1 0 1 1 0 2h2Z"/>
+          <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
+        </svg>
+      )
     },
     {
       category: 'Rotoscoping and Keying',
       services: ['Footage Analysis', 'Shape Creation (Masks/Mattes)', 'Frame-by-Frame Tracking', 'Multi-layer Mattes', 'Final Matte Export'],
-      icon: <svg className="w-8 h-8" fill="#ff0080" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      icon: (
+        <svg className="w-8 h-8 text-pink-400" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 4h5l2 3h9a1 1 0 0 1 0 2h-9l-2 3H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm9.293 7.293 1.414 1.414L12.414 15l2.293 2.293-1.414 1.414L11 16.414l-2.293 2.293-1.414-1.414L9.586 15 7.293 12.707l1.414-1.414L11 13.586l2.293-2.293Z"/>
+        </svg>
+      )
     },
     {
       category: 'Keying',
       services: ['Green Screen/Blue Screen Removal'],
-      icon: <svg className="w-8 h-8" fill="#00ffff" viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14z"/></svg>
+      icon: (
+        <svg className="w-8 h-8 text-cyan-400" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 4h10a3 3 0 0 1 3 3v4h-2V7a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3v2H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Z"/>
+          <path d="M21 14a3 3 0 1 0-4.243 2.828l-1.465 1.465a1 1 0 0 0 1.414 1.414l1.465-1.465A3 3 0 0 0 21 14Zm-3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
+        </svg>
+      )
     },
     {
       category: 'FX Simulations',
       services: ['Fire & Smoke', 'Fluid/Water', 'Destruction/Rigid Body', 'Dust/Sparks'],
-      icon: <svg className="w-8 h-8" fill="#ff4500" viewBox="0 0 24 24"><path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67z"/></svg>
+      icon: (
+        <svg className="w-8 h-8 text-orange-400" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12.001 2c.87 2.997-.62 4.996-2.243 6.62C8.135 10.242 7 11.61 7 14a5 5 0 1 0 10 0c0-1.89-.672-3.14-1.63-4.52-.74-1.05-1.58-2.25-1.37-3.89C14.208 4.32 15.5 3 16.5 2c-1.2.2-3.16 1.08-4.499 3Z"/>
+        </svg>
+      )
     },
     {
       category: 'Compositing',
       services: ['Background Replacement', 'Layering & Blending', 'FX Integration', 'Color Correction & Grading'],
-      icon: <svg className="w-8 h-8" fill="#9400d3" viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+      icon: (
+        <svg className="w-8 h-8 text-violet-400" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 3h10a2 2 0 0 1 2 2v3H5V5a2 2 0 0 1 2-2Zm12 7v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7h14Zm-9 3h6l3 4H7l3-4Z"/>
+        </svg>
+      )
     }
   ]
 
@@ -66,7 +88,7 @@ function Vfx() {
           </div>
 
           {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {vfxServices.map((service, index) => (
               <div
                 key={service.category}
@@ -112,19 +134,10 @@ function Vfx() {
           </div>
 
           {/* Bottom CTA */}
-          <div className="text-center mt-16">
+          <div className="text-center mt-12">
             <a href="/contact" className="inline-block px-8 py-4 bg-gradient-to-r from-green-500 to-blue-600 text-black font-bold rounded-lg hover:from-green-400 hover:to-blue-500 transition-all duration-300 text-lg font-mono tracking-wider transform hover:scale-110 shadow-lg shadow-green-500/30">
-              [ INITIATE VFX PROJECT ]
+              [ MAKE YOUR PROJECT ]
             </a>
-            
-            <div className="mt-8">
-              <p className="text-green-400 text-lg mb-2 font-mono">
-                > REALITY.EXE HAS STOPPED WORKING
-              </p>
-              <p className="text-gray-400 text-sm font-mono max-w-2xl mx-auto">
-                Step into the digital realm where imagination meets technology. Our VFX artists manipulate reality itself, creating impossible worlds and bringing fantasies to life through cutting-edge visual effects.
-              </p>
-            </div>
           </div>
         </div>
       </div>

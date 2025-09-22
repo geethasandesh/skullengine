@@ -150,27 +150,14 @@ export default function Graphic() {
                   </div>
 
                   {/* Description */}
-                  <p className="text-gray-600 mb-6 leading-relaxed">
+                  <p className="text-gray-600 mb-4 leading-relaxed">
                     {service.description}
                   </p>
 
-                  {/* Tools */}
-                  <div className="mb-6">
-                    <p className="text-sm font-semibold text-gray-500 mb-2">TOOLS:</p>
-                    <div className="flex flex-wrap gap-2">
-                      {service.tools.map((tool, idx) => (
-                        <span
-                          key={idx}
-                          className={`px-3 py-1 bg-gradient-to-r ${service.color} text-white text-xs font-medium rounded-full hover:scale-110 transition-transform duration-200`}
-                        >
-                          {tool}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+          
 
                   {/* Creative Elements */}
-                  <div className="flex items-center justify-center">
+                  <div className="flex items-center justify-center mt-2">
                     <div className="flex space-x-2">
                       <div className="w-6 h-6 border-2 border-gray-300 rounded hover:border-pink-500 transition-colors cursor-pointer"></div>
                       <div className="w-6 h-6 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full hover:scale-110 transition-transform cursor-pointer"></div>
@@ -190,7 +177,7 @@ export default function Graphic() {
           </div>
 
           {/* Bottom CTA */}
-          <div className="text-center mt-16">
+          <div className="text-center mt-12">
             <div className="inline-flex items-center space-x-4 mb-6">
               <div className="w-8 h-1 bg-gradient-to-r from-pink-500 to-transparent"></div>
               <span className="text-gray-600 font-mono text-sm">READY TO CREATE?</span>
@@ -199,12 +186,6 @@ export default function Graphic() {
             <a href="/contact" className="inline-block px-12 py-4 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white font-bold rounded-full hover:from-pink-400 hover:via-purple-400 hover:to-blue-400 transition-all duration-300 text-lg transform hover:scale-110 shadow-2xl">
               🎨 START YOUR PROJECT
             </a>
-            
-            <div className="mt-8">
-              <p className="text-gray-600 text-sm max-w-2xl mx-auto">
-                From concept to creation, we transform your ideas into stunning visual experiences that captivate, communicate, and convert.
-              </p>
-            </div>
           </div>
         </div>
       </div>

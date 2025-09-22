@@ -5,31 +5,57 @@ function Video() {
     {
       title: 'Video Songs',
       description: 'Professional music video production with cinematic quality and creative storytelling.',
-      icon: <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>,
+      icon: (
+        <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 5a2 2 0 0 1 2-2h7l3 3h4a2 2 0 0 1 2 2v2H4V5Z"/>
+          <path d="M4 11h20v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8Zm9 2.5v5a.5.5 0 0 0 .77.42l4-2.5a.5.5 0 0 0 0-.84l-4-2.5a.5.5 0 0 0-.77.42Z"/>
+        </svg>
+      ),
       color: 'from-red-500 to-pink-500'
     },
     {
       title: 'Lyrical Video Song',
       description: 'Engaging lyrical videos with synchronized text animations and visual effects.',
-      icon: <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2.5-5H21l-2-2H3l-2 2h1.5v16h19V6z"/></svg>,
+      icon: (
+        <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 4h16a2 2 0 0 1 2 2v8H2V6a2 2 0 0 1 2-2Z"/>
+          <path d="M8 6h8v2H8V6Z"/>
+          <path d="M2 16h20v2a2 2 0 0 1-2 2h-7.5v-3a2.5 2.5 0 1 0-2 2.45V20H4a2 2 0 0 1-2-2v-2Z"/>
+        </svg>
+      ),
       color: 'from-blue-500 to-cyan-500'
     },
     {
       title: 'Motion Graphics',
       description: 'Dynamic motion graphics and animations for branding, explainers, and presentations.',
-      icon: <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>,
+      icon: (
+        <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 6a2 2 0 0 1 2-2h4v6H3V6Zm6 0h6v6H9V6Zm8 0h2a2 2 0 0 1 2 2v4h-4V6Z"/>
+          <path d="M3 12h6v6H5a2 2 0 0 1-2-2v-4Zm8 0h6v6h-6v-6Zm8 0h4v4a2 2 0 0 1-2 2h-2v-6Z"/>
+        </svg>
+      ),
       color: 'from-purple-500 to-indigo-500'
     },
     {
       title: 'YouTube Videos',
       description: 'Complete YouTube content creation from scripting to final edit with SEO optimization.',
-      icon: <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M21 8v8c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V8c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2zm-2.5 3.5l-7-4.5v9l7-4.5z"/></svg>,
+      icon: (
+        <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 8.5c0-1.38-1.12-2.5-2.5-2.5h-15C3.12 6 2 7.12 2 8.5v7c0 1.38 1.12 2.5 2.5 2.5h15c1.38 0 2.5-1.12 2.5-2.5v-7Z"/>
+          <path d="M10 9.5v5l5-2.5-5-2.5Z" className="fill-black"/>
+        </svg>
+      ),
       color: 'from-red-600 to-red-400'
     },
     {
       title: 'Reels & Shorts',
       description: 'Viral-ready short-form content optimized for Instagram Reels and YouTube Shorts.',
-      icon: <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/></svg>,
+      icon: (
+        <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 2h10a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3Z"/>
+          <path d="M10 9.5v5l4-2.5-4-2.5Z" className="fill-black"/>
+        </svg>
+      ),
       color: 'from-green-500 to-teal-500'
     }
   ]
@@ -78,7 +104,7 @@ function Video() {
             <div className="flex items-center justify-center mb-6">
               <div className="w-4 h-4 bg-red-500 rounded-full animate-pulse mr-3"></div>
               <h1 className="text-4xl font-bold text-white font-mono] bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
-                VIDEO PRODUCTION
+                VIDEO EDITING
               </h1>
               <div className="w-4 h-4 bg-red-500 rounded-full animate-pulse ml-3"></div>
             </div>
@@ -93,7 +119,7 @@ function Video() {
           </div>
 
           {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {videoServices.map((service, index) => (
               <div
                 key={service.title}
@@ -156,19 +182,10 @@ function Video() {
           </div>
 
           {/* Bottom CTA */}
-          <div className="text-center mt-16">
+          <div className="text-center mt-12">
             <a href="/contact" className="inline-block px-12 py-4 bg-gradient-to-r from-red-600 via-purple-600 to-blue-600 text-white font-bold rounded-full hover:from-red-500 hover:via-purple-500 hover:to-blue-500 transition-all duration-300 text-lg transform hover:scale-110 shadow-2xl">
               🎬 START YOUR VIDEO PROJECT
             </a>
-            
-            <div className="mt-8">
-              <p className="text-red-400 text-lg mb-2 font-mono animate-pulse">
-                ● REC • EDITING IN PROGRESS...
-              </p>
-              <p className="text-gray-400 text-sm font-mono max-w-2xl mx-auto">
-                From concept to final cut, we transform your ideas into compelling visual stories that engage, inspire, and convert your audience across all platforms.
-              </p>
-            </div>
           </div>
         </div>
       </div>

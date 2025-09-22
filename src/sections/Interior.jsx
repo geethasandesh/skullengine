@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Interior() {
   const services = [
@@ -6,20 +7,20 @@ function Interior() {
       title: "3D Interior Design",
       description: "Transform your living spaces with stunning visualizations.",
       features: ["Living Rooms", "Bedrooms", "Kitchens", "Bathrooms", "Office Spaces"],
-      image: "/images/interior.jpg"
+      image: "/images/Interior1.jpeg"
     },
     {
       title: "3D Exterior Design",
       description: "Showcase architectural brilliance with detailed visualizations.",
       features: ["Residential Buildings", "Commercial Complexes", "Landscape Design", "Facade Design", "Urban Planning"],
-      image: "/images/exterior.jpg"
+      image: "/images/Exterior1.jpeg"
     },
   ];
 
   return (
     <div className="min-h-screen bg-black/80 backdrop-blur-md py-20 px-8 flex items-center justify-center relative overflow-hidden">
       {/* Interior/Exterior Background Elements */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
         {/* House/Building SVGs */}
         {Array.from({length: 12}, (_, i) => (
           <div
@@ -67,11 +68,11 @@ function Interior() {
           />
         ))}
       </div>
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-white mb-4 font-mono">
-            Architectural Design
+            ARCHITECTURAL DESIGN
           </h1>
           <p className="text-xl text-gray-400">
             Professional 3D visualization services
@@ -170,6 +171,13 @@ function Interior() {
               </a>
             </div>
           ))}
+        </div>
+
+        {/* CTA Button */}
+        <div className="text-center mt-12">
+          <Link to="/contact" className="inline-block px-12 py-4 bg-gradient-to-r from-blue-300 via-purple-300 to-purple-400 text-white font-bold rounded-full hover:from-blue-500 hover:via-blur-300 hover:to-purple-300 transition-all duration-300 text-lg transform hover:scale-90 shadow-2xl">
+            LET'S MAKE YOURS
+          </Link>
         </div>
       </div>
 

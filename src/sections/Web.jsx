@@ -214,7 +214,7 @@ const Web = () => {
           </div>
 
           {/* Bottom CTA */}
-          <div className="text-center mt-16">
+          <div className="text-center mt-12">
             <div className="inline-flex items-center space-x-4 mb-6">
               <div className="w-8 h-1 bg-gradient-to-r from-orange-500 to-transparent"></div>
               <span className="text-gray-300 font-mono text-sm">READY_TO_BUILD?</span>
@@ -223,13 +223,6 @@ const Web = () => {
             <a href="/contact" className="inline-block px-12 py-4 bg-gradient-to-r from-orange-500 via-red-500 to-pink-600 text-white font-bold rounded-lg hover:from-orange-400 hover:via-red-400 hover:to-pink-500 transition-all duration-300 text-lg transform hover:scale-110 shadow-2xl">
               🌐 DEPLOY_WEBSITE()
             </a>
-            
-            <div className="mt-8">
-              <p className="text-gray-400 text-sm max-w-2xl mx-auto font-mono">
-                // Crafting digital experiences that perform<br/>
-                From responsive designs to scalable backends, we build the web.
-              </p>
-            </div>
           </div>
         </div>
       </div>

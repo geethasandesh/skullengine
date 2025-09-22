@@ -210,7 +210,7 @@ const AppDevelopment = () => {
           </div>
 
           {/* Bottom CTA */}
-          <div className="text-center mt-16">
+          <div className="text-center mt-12">
             <div className="inline-flex items-center space-x-4 mb-6">
               <div className="w-8 h-1 bg-gradient-to-r from-cyan-500 to-transparent"></div>
               <span className="text-gray-300 font-mono text-sm">READY_TO_CODE?</span>
@@ -219,13 +219,6 @@ const AppDevelopment = () => {
             <a href="/contact" className="inline-block px-12 py-4 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 text-white font-bold rounded-lg hover:from-cyan-400 hover:via-blue-400 hover:to-purple-500 transition-all duration-300 text-lg transform hover:scale-110 shadow-2xl font-mono">
               📱 LAUNCH_PROJECT()
             </a>
-            
-            <div className="mt-8">
-              <p className="text-gray-400 text-sm max-w-2xl mx-auto font-mono">
-                // Building the future, one app at a time<br/>
-                From concept to deployment, we code solutions that scale and perform.
-              </p>
-            </div>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -17,10 +18,40 @@ function Contact() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('');
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission here
+    setIsSubmitting(true);
+    setSubmitStatus('');
+
+    try {
+      // EmailJS configuration
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        mobile: formData.mobile,
+        service: formData.service === 'Other' ? formData.otherService : formData.service,
+        message: formData.message,
+        to_email: 'skullenginestudio@gmail.com'
+      };
+
+      await emailjs.send(
+        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        templateParams,
+        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+      );
+
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', mobile: '', service: '', otherService: '', message: '' });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -28,17 +59,19 @@ function Contact() {
       title: 'Email Us',
       info: 'skullenginestudio@gmail.com',
       icon: <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>,
-      gradient: 'from-blue-500 to-cyan-600'
+      gradient: 'from-blue-500 to-cyan-600',
+      link: 'mailto:skullenginestudio@gmail.com'
     },
     {
       title: 'Call Us',
-      info: '+1 (555) 123-4567',
+      info: '040-40103376',
       icon: <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>,
-      gradient: 'from-green-500 to-emerald-600'
+      gradient: 'from-green-500 to-emerald-600',
+      link: 'tel:+919670927828'
     },
     {
       title: 'Visit Us',
-      info: '123 Creative Street, Design City, DC 12345',
+      info: 'Masab Tank , Vijay Nagar Colony',
       icon: <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>,
       gradient: 'from-purple-500 to-indigo-600'
     },
@@ -46,7 +79,8 @@ function Contact() {
       title: 'Follow Us',
       info: '@skullengine',
       icon: <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>,
-      gradient: 'from-pink-500 to-rose-600'
+      gradient: 'from-pink-500 to-rose-600',
+      link: 'https://instagram.com/skullengine'
     }
   ];
 
@@ -89,16 +123,16 @@ function Contact() {
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="font-['slackey'] text-4xl md:text-4xl mb-8 t bg-clip-text text-orange-500">
+        <div className="text-center mb-12 sm:mb-16 px-4">
+          <h1 className="font-['slackey'] text-3xl sm:text-4xl mb-6 sm:mb-8 bg-clip-text text-orange-500">
             Get In Touch
           </h1>
-          <p className="text-xl text-gray-300 mb-4 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-4 max-w-3xl mx-auto">
             Ready to bring your ideas to life? Let's start a conversation about your next project.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-12 sm:mb-16 px-4">
           {/* Contact Form */}
           <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-600/50 rounded-2xl p-8 shadow-xl hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300">
             <div className="flex items-center mb-6">
@@ -193,11 +227,24 @@ function Contact() {
                 ></textarea>
               </div>
               
+              {submitStatus === 'success' && (
+                <div className="bg-green-500/20 border border-green-500/50 rounded-xl p-4 mb-4">
+                  <p className="text-green-400 text-center">✅ Message sent successfully! We'll get back to you soon.</p>
+                </div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <div className="bg-red-500/20 border border-red-500/50 rounded-xl p-4 mb-4">
+                  <p className="text-red-400 text-center">❌ Failed to send message. Please try again or contact us directly.</p>
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-red-600 to-red-800 text-white font-bold py-4 px-8 rounded-xl hover:from-green-500 hover:to-green-900 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-cyan-500/25 hover:-translate-y-1 group"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-red-600 to-red-800 text-white font-bold py-4 px-8 rounded-xl hover:from-green-500 hover:to-green-900 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-cyan-500/25 hover:-translate-y-1 group disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
                 <svg className="w-5 h-5 ml-2 inline-block group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                 </svg>
@@ -217,15 +264,32 @@ function Contact() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {contactInfo.map((contact, index) => (
                   <div key={contact.title} className="group">
-                    <div className={`p-4 bg-gradient-to-br ${contact.gradient}/10 rounded-xl border border-slate-600/50 hover:border-slate-500/50 transition-all duration-300 hover:-translate-y-1`}>
-                      <div className={`flex items-center mb-3`}>
-                        <div className={`p-2 bg-gradient-to-r ${contact.gradient} rounded-lg text-white mr-3 group-hover:scale-110 transition-transform duration-300`}>
-                          {contact.icon}
+                    {contact.link ? (
+                      <a 
+                        href={contact.link}
+                        target={contact.link.startsWith('http') ? '_blank' : '_self'}
+                        rel={contact.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        className={`block p-4 bg-gradient-to-br ${contact.gradient}/10 rounded-xl border border-slate-600/50 hover:border-slate-500/50 transition-all duration-300 hover:-translate-y-1 cursor-pointer`}
+                      >
+                        <div className={`flex items-center mb-3`}>
+                          <div className={`p-2 bg-gradient-to-r ${contact.gradient} rounded-lg text-white mr-3 group-hover:scale-110 transition-transform duration-300`}>
+                            {contact.icon}
+                          </div>
+                          <h3 className="font-bold text-white">{contact.title}</h3>
                         </div>
-                        <h3 className="font-bold text-white">{contact.title}</h3>
+                        <p className="text-gray-300 text-sm leading-relaxed">{contact.info}</p>
+                      </a>
+                    ) : (
+                      <div className={`p-4 bg-gradient-to-br ${contact.gradient}/10 rounded-xl border border-slate-600/50 hover:border-slate-500/50 transition-all duration-300 hover:-translate-y-1`}>
+                        <div className={`flex items-center mb-3`}>
+                          <div className={`p-2 bg-gradient-to-r ${contact.gradient} rounded-lg text-white mr-3 group-hover:scale-110 transition-transform duration-300`}>
+                            {contact.icon}
+                          </div>
+                          <h3 className="font-bold text-white">{contact.title}</h3>
+                        </div>
+                        <p className="text-gray-300 text-sm leading-relaxed">{contact.info}</p>
                       </div>
-                      <p className="text-gray-300 text-sm leading-relaxed">{contact.info}</p>
-                    </div>
+                    )}
                   </div>
                 ))}
               </div>
