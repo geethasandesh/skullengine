@@ -117,7 +117,7 @@ export default function Graphic() {
               <div className="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
               <div className="w-3 h-3 bg-green-500 rounded-full mr-6"></div>
               <h1 className="text-4xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent font-['Slackey']">
-                GRAPHIC DESIGN
+                GRAPHIC DESIGN SERVICES
               </h1>
               <div className="w-3 h-3 bg-blue-500 rounded-full ml-6"></div>
               <div className="w-3 h-3 bg-purple-500 rounded-full ml-2"></div>

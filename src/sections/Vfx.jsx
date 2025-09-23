@@ -18,7 +18,10 @@ function Vfx() {
       category: 'Keying',
       services: ['Green Screen/Blue Screen Removal'],
       icon: <svg className="w-8 h-8" fill="#00ffff" viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14z"/></svg>
-    },
+    }
+  ]
+
+  const lastTwoServices = [
     {
       category: 'FX Simulations',
       services: ['Fire & Smoke', 'Fluid/Water', 'Destruction/Rigid Body', 'Dust/Sparks'],
@@ -67,8 +70,8 @@ function Vfx() {
             </p>
           </div>
 
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* First three services */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {vfxServices.map((service, index) => (
               <motion.div
                 key={service.category}
@@ -79,11 +82,9 @@ function Vfx() {
                 }}
                 variants={fadeInUp}
               >
-                {/* Glitch effect overlay */}
                 <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-blue-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
                 <div className="relative z-10">
-                  {/* Icon and Category */}
                   <div className="flex items-center mb-4">
                     <div className="group-hover:animate-spin transition-transform duration-500">
                       {service.icon}
@@ -93,7 +94,6 @@ function Vfx() {
                     </h3>
                   </div>
 
-                  {/* Services List */}
                   <div className="space-y-2">
                     {service.services.map((item, idx) => (
                       <div
@@ -107,7 +107,49 @@ function Vfx() {
                   </div>
                 </div>
 
-                {/* Corner accents */}
+                <div className="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-green-500 opacity-50 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-green-500 opacity-50 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Last two services centered horizontally */}
+          <div className="flex justify-center gap-6">
+            {lastTwoServices.map((service, index) => (
+              <motion.div
+                key={service.category}
+                className="group relative bg-black/80 border border-green-500/30 rounded-lg p-6 hover:border-green-400 hover:shadow-2xl hover:shadow-green-500/20 transition-all duration-500 hover:scale-105 backdrop-blur-sm w-80"
+                style={{
+                  animationDelay: `${index * 0.2}s`,
+                  boxShadow: '0 0 20px rgba(0, 255, 65, 0.1)'
+                }}
+                variants={fadeInUp}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-blue-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                <div className="relative z-10">
+                  <div className="flex items-center mb-4">
+                    <div className="group-hover:animate-spin transition-transform duration-500">
+                      {service.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-white ml-3 font-mono tracking-wide">
+                      {service.category.toUpperCase()}
+                    </h3>
+                  </div>
+
+                  <div className="space-y-2">
+                    {service.services.map((item, idx) => (
+                      <div
+                        key={idx}
+                        className="flex items-center text-green-300 hover:text-green-100 transition-colors duration-300 font-mono text-sm"
+                      >
+                        <span className="text-green-500 mr-2">▶</span>
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
                 <div className="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-green-500 opacity-50 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-green-500 opacity-50 group-hover:opacity-100 transition-opacity duration-300"></div>
               </motion.div>

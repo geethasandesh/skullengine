@@ -119,7 +119,7 @@ const AppDevelopment = () => {
             <div className="flex items-center justify-center mb-6">
               <div className="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
               <motion.h1 variants={fadeInUp} className="scroll-mt-nav text-4xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent font-mono">
-                APP DEVELOPMENT
+                APP DEVELOPMENT SERVICES
               </motion.h1>
               <div className="w-3 h-3 bg-blue-500 rounded-full ml-6"></div>
               <div className="w-3 h-3 bg-purple-500 rounded-full ml-2"></div>

@@ -22,7 +22,7 @@ function Interior() {
   return (
     <motion.div className="min-h-screen bg-black/80 backdrop-blur-md py-20 px-8 flex items-center justify-center relative overflow-hidden" initial="hidden" whileInView="show" viewport={{ amount: 0.2, once: true }} variants={staggerContainer(0.1, 0.08)}>
       {/* Interior/Exterior Background Elements */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
         {/* House/Building SVGs */}
         {Array.from({length: 12}, (_, i) => (
           <div
@@ -74,7 +74,7 @@ function Interior() {
         {/* Header */}
         <div className="text-center mb-16">
           <motion.h1 variants={fadeInUp} className="scroll-mt-nav text-4xl font-bold text-white mb-4 font-mono">
-            ARCHITECTURAL DESIGN
+            ARCHITECTURAL DESIGN SERVICES
           </motion.h1>
           <p className="text-xl text-gray-400">
             BUILD YOUR DREAM HOUSE
