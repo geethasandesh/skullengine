@@ -87,9 +87,13 @@ function Animation() {
         ))}
       </div>
       <div className="max-w-6xl mx-auto relative z-10">
-        <motion.h2 variants={fadeInUp} className="scroll-mt-nav text-4xl font-bold text-center mb-12 font-['Slackey']">
+        <motion.h2 variants={fadeInUp} className="scroll-mt-nav text-4xl font-bold text-center mb-2 font-['Slackey']">
           3d Animation Services
         </motion.h2>
+        <p className="text-center text-white sm:text-lg font-medium tracking-wide mb-10">
+          Make your dream a reality
+        </p>
+        
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
@@ -125,6 +129,7 @@ function Animation() {
             </motion.div>
           ))}
         </div>
+
         
         <div className="text-center mt-8">
           <a href="/contact" className="inline-block px-8 py-3 bg-gradient-to-r from-red-600 to-red-800 text-white font-medium rounded-lg hover:bg-orange-400 transition-colors duration-300 text-lg">

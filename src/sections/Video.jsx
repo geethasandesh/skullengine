@@ -90,7 +90,7 @@ function Video() {
               <div className="w-20 h-1 bg-gradient-to-l from-blue-500 to-transparent rounded"></div>
             </div>
             <p className="text-gray-300 text-xl font-mono tracking-wider">
-              PROFESSIONAL VIDEO EDITING & PRODUCTION SERVICES
+              FROM SHOTS TO STORIES
             </p>
           </div>
 

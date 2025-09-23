@@ -77,7 +77,7 @@ function Interior() {
             ARCHITECTURAL DESIGN
           </motion.h1>
           <p className="text-xl text-gray-400">
-            Professional 3D visualization services
+            BUILD YOUR DREAM HOUSE
           </p>
         </div>
 

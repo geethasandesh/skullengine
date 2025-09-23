@@ -54,22 +54,22 @@ const Hero = () => {
         
         {/* Text Section */}
         <div ref={textRef} className="w-full max-w-3xl mb-8">
-          <motion.h1
+          <motion.img
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
-            className="scroll-mt-nav font-['Slackey'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-purple-600 leading-tight"
-          >
-            Skull Engine
-          </motion.h1>
-          <motion.p
+            src="/images/svgviewer-output.svg"
+            alt="Skull Engine"
+            className="scroll-mt-nav mx-auto w-[720px] max-w-full h-auto mt-4 sm:mt-8 mb-4 sm:mb-6"
+          />
+          <motion
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: 'easeOut', delay: 0.05 }}
             className="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-4 sm:mb-6 lg:mb-8 px-2 sm:px-0"
           >
             Bringing your animations to life with a dark, edgy aesthetic
-          </motion.p>
+          </motion>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}

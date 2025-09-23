@@ -124,7 +124,7 @@ export default function Graphic() {
               <div className="w-3 h-3 bg-pink-500 rounded-full ml-2"></div>
             </div>
             <p className="text-gray-600 text-xl font-mono">
-              Creative Solutions • Visual Storytelling • Brand Identity
+              Desgins • That Speak
             </p>
           </div>
 

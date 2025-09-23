@@ -57,8 +57,8 @@ const Digital = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="font-slackey text-4xl md:text-4xl mb-8 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-blue-500 to-green-500">
-            Digital Marketing
+          <h1 className="font-slackey text-4xl font-bold md:text-4xl mb-8 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-blue-500 to-green-500">
+            Digital Marketing Services
           </h1>
           <p className="text-xl text-gray-600 mb-4 max-w-3xl mx-auto">
             Transform your business with data-driven digital strategies that deliver exponential growth

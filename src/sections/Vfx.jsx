@@ -63,7 +63,7 @@ function Vfx() {
             </motion.h1>
             <div className="w-32 h-1 bg-gradient-to-r from-green-400 to-blue-500 mx-auto mb-6"></div>
             <p className="text-green-300 text-xl font-mono tracking-wider">
-              [ ENTERING VISUAL EFFECTS DIMENSION ]
+              [ VISUALS WITHOUT LIMITS ]
             </p>
           </div>
 
