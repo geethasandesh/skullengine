@@ -92,13 +92,13 @@ function Contact() {
   ];
 
   const services = [
-    'Web Development',
-    'App Development', 
-    'Digital Marketing',
     'Graphic Design',
     '3D Animation',
     'Video Production',
-    'Interior Design',
+    'Interior & Exterior Design',
+    'Web Development',
+    'App Development', 
+    'Digital Marketing',
     'Other'
   ];
 

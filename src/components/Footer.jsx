@@ -84,7 +84,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center text-gray-400 text-xs sm:text-sm">
-          <p>&copy; {new Date().getFullYear()} SkullEngine. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} SkullEngine. All rights reserved.   Developed By Grahmind Innovations</p>
         </div>
       </div>
     </footer>
