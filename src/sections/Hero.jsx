@@ -68,7 +68,7 @@ const Hero = () => {
             transition={{ duration: 0.5, ease: 'easeOut', delay: 0.05 }}
             className="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-4 sm:mb-6 lg:mb-8 px-2 sm:px-0"
           >
-            Bringing your animations to life with a dark, edgy aesthetic
+            This is an Online Service Website
           </motion>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
@@ -76,7 +76,7 @@ const Hero = () => {
             transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
             className="text-sm sm:text-base text-gray-400 mb-6 sm:mb-8 max-w-2xl mx-auto px-4 sm:px-0 leading-relaxed"
           >
-            Professional animation services with a unique skull-themed style. We create captivating visuals that leave a lasting impression.
+            Look at Oure Services Below
           </motion.p>
           <motion.div
             ref={ctaRef}
