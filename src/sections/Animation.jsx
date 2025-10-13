@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { fadeInUp, staggerContainer } from '../constants/motion'
 
 function Animation() {
@@ -132,9 +133,9 @@ function Animation() {
 
         
         <div className="text-center mt-8">
-          <a href="/contact" className="inline-block px-8 py-3 bg-gradient-to-r from-red-600 to-red-800 text-white font-medium rounded-lg hover:bg-orange-400 transition-colors duration-300 text-lg">
+          <Link to="/contact" className="inline-block px-8 py-3 bg-gradient-to-r from-red-600 to-red-800 text-white font-medium rounded-lg hover:bg-orange-400 transition-colors duration-300 text-lg">
             Let's Create Together
-          </a>
+          </Link>
         </div>
       </div>
       
