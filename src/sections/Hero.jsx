@@ -1,6 +1,7 @@
 // Hero.jsx
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const heroRef = useRef(null);
@@ -51,7 +52,7 @@ const Hero = () => {
 
       {/* Content */}
       <div className="container mx-auto px-4 z-20 relative flex flex-col items-center justify-start pt-24 sm:pt-28 lg:pt-32 text-center min-h-screen">
-        
+
         {/* Text Section */}
         <div ref={textRef} className="w-full max-w-3xl mb-8">
           <motion.img
@@ -85,15 +86,15 @@ const Hero = () => {
             transition={{ duration: 0.5, ease: 'easeOut', delay: 0.15 }}
             className="flex justify-center px-4 sm:px-0"
           >
-            <a href="/contact" className="px-6 sm:px-8 py-3 bg-gradient-to-r from-red-600 to-red-800 text-white font-medium rounded-md hover:from-red-700 hover:to-red-900 transition-all duration-300 shadow-lg shadow-red-500/20 text-center text-sm sm:text-base">
+            <Link to="/animation" className="px-6 sm:px-8 py-3 bg-gradient-to-r from-red-600 to-red-800 text-white font-medium rounded-md hover:from-red-700 hover:to-red-900 transition-all duration-300 shadow-lg shadow-red-500/20 text-center text-sm sm:text-base">
               Get Started
-            </a>
+            </Link>
           </motion.div>
 
           {/* Spacer to ensure dots start under CTA */}
           <div className="mt-8" />
         </div>
-        
+
         {/* Skull Image Section hidden to allow full-height dots */}
         <div className="hidden" />
       </div>

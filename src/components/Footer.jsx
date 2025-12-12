@@ -7,14 +7,14 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           <div className="mb-6 sm:col-span-2 lg:col-span-1">
-           
-              <img src="/images/final-logo-white_name.svg" alt="Skull Engine" className="w-66" />
+
+            <img src="/images/final-logo-white_name.svg" alt="Skull Engine" className="w-66" />
             <p>.</p>
             <p className="text-gray-400 text-xs sm:text-sm">
               Professional animation services with a unique skull-themed aesthetic. We bring your creative visions to life.
-            </p> 
+            </p>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-semibold mb-4 text-red-500">Services</h3>
             <ul className="space-y-2">
@@ -28,15 +28,15 @@ const Footer = () => {
               <li><Link to="/video" className="text-gray-400 hover:text-white transition-colors">Video Editing</Link></li>
             </ul>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-semibold mb-4 text-red-500">Company</h3>
             <ul className="space-y-2">
-               <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors">About</Link></li>
+              <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors">About</Link></li>
               <li><Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-semibold mb-4 text-red-500">Connect</h3>
             <div className="flex space-x-4 mb-4">
@@ -55,9 +55,9 @@ const Footer = () => {
                   <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
                 </svg>
               </a>
-              <a href="https://www.linkedin.com/company/skullengine" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.linkedin.com/company/skullenginestudio/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.026-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.943v5.663H9.352V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.37-1.852 3.605 0 4.27 2.372 4.27 5.456v6.287zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.561V9h3.553v11.452z"/>
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.026-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.943v5.663H9.352V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.37-1.852 3.605 0 4.27 2.372 4.27 5.456v6.287zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.561V9h3.553v11.452z" />
                 </svg>
               </a>
               <a href="https://wa.me/917670927828?text=Hi%2C%20can%20I%20know%20detailed%20info%20about%20your%20services%3F" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
@@ -82,7 +82,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-800 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center text-gray-400 text-xs sm:text-sm">
           <p>&copy; {new Date().getFullYear()} SkullEngine. All rights reserved.   Developed By Grahmind Innovations</p>
         </div>
